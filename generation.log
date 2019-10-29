@@ -1,0 +1,22 @@
+~/lab/kubernetes/CRD/handson/src/crd-generator  ./gen.sh
+
+# gonum.org/v1/gonum/graph/iterator
+../gonum.org/v1/gonum/graph/iterator/nodes.go:135:9: undefined: reflect.MapIter
+# k8s.io/code-generator/cmd/conversion-gen/generators
+../k8s.io/code-generator/cmd/conversion-gen/generators/conversion.go:641:2: non-bool klog.V(5) (type klog.Verbose) used as if condition
+Generating deepcopy funcs
+F1029 14:00:14.744616   41952 main.go:82] Error: Failed executing generator: some packages had errors:
+type "k8s.io/apimachinery/pkg/runtime.Object" in k8s:deepcopy-gen:interfaces tag of type k8s.io/apimachinery/pkg/runtime.Object is not an interface, but: ""
+./gen.sh: line 16: tree: command not found
+
+
+
+FIX: added k8s.io/apimachinery to $GOPATH/src
+
+
+~/lab/kubernetes/CRD/handson/src/crd-generator  ./gen.sh
+Generating deepcopy funcs
+Generating clientset for myresource:v1 at crd-generator/pkg/client/clientset
+Generating listers for myresource:v1 at crd-generator/pkg/client/listers
+Generating informers for myresource:v1 at crd-generator/pkg/client/informers
+./gen.sh: line 16: tree: command not found

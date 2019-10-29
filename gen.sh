@@ -1,12 +1,12 @@
 # ROOT_PACKAGE :: the package (relative to $GOPATH/src) that is the target for code generation
-ROOT_PACKAGE="github.com/trstringer/k8s-controller-core-resource"
+ROOT_PACKAGE="crd-generator"
 # CUSTOM_RESOURCE_NAME :: the name of the custom resource that we're generating client code for
 CUSTOM_RESOURCE_NAME="myresource"
 # CUSTOM_RESOURCE_VERSION :: the version of the resource
 CUSTOM_RESOURCE_VERSION="v1"
 
 # retrieve the code-generator scripts and bins
-go get -u k8s.io/code-generator/...
+# go get -u k8s.io/code-generator/... # comment this out after the first run to avoid get it every time
 cd $GOPATH/src/k8s.io/code-generator
 
 # run the code-generator entrypoint script
